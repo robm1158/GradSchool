@@ -1,0 +1,1 @@
+# Starting the query of finance data 
