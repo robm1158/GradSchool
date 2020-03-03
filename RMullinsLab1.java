@@ -22,7 +22,7 @@ class stackChar{
 
     public void push(char value){
         if (curr_size >= max_size){
-            // causes overflow
+            System.out.println("System overflow resize stack");
             resize(max_size*2);
         }
         curr_size++;
@@ -34,18 +34,34 @@ class stackChar{
         if (top >= 0){
             return(container[top--]);
         }
-        throw new RuntimeException("more specific type");
+        else{
+            throw new RuntimeException("Stack underflow!!");
+        }
+        
     }
 
     public int size(){
         return top;
     }
+    
+    public void clear(){
+        for (int i = 0; i < top; i++)
+            container[i] = (Character)null;
+        top = -1;
+    }
+
+    public boolean isEmpty(){
+        if(top == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     private void resize(int new_size){
-        // resize the array
-        // copy all data
+
         copy = new char[new_size];
         for(int i = 0; i < curr_size; i++){
-            // copy
             copy[i] = container[i];
         }
         container = new char[new_size];
@@ -271,6 +287,8 @@ class RMullinsLab1{
 
         String fileNameOut,fileNameIn; 
         Scanner scanner =null;
+        stackChar stringArray = new stackChar(8);
+        stackChar reverseArray = new stackChar(8);
         
         try{
             scanner = new Scanner(System.in);
@@ -289,30 +307,29 @@ class RMullinsLab1{
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
 
-            File file = new File(fileNameIn); 
-    
-            BufferedReader br2 = new BufferedReader(new FileReader(file)); 
-            
-            String st;
             int curr_char = 0;
-            while ((st = br.readLine()) != null){
-                System.out.println("Result for "+st);
-                newFile.writeFile(fileNameOut, "\n"+st+"\n");
-                while ((curr_char = br.read()) != -1){
-                    //System.out.println("Result for "+stc);
-                    if((char)(curr_char) != '\r' && (char)(curr_char) != '\n') {
-
-                        test.convert(fileNameOut, (char)(curr_char));
-                    }
-                    else{
-                        
-                        test.count = 0;
-                        break;
-                    }
-                }
+    
+            while ((curr_char = br.read()) != -1){
                 
+                if((char)(curr_char) != '\r' && (char)(curr_char) != '\n') {
+                    stringArray.push((char)(curr_char));
+                    test.convert(fileNameOut, (char)(curr_char));
+                }
+                else{
+                    while(!stringArray.isEmpty()){
+                        char letter = stringArray.pop();
+                        reverseArray.push(letter);
+                    }
+                    while(!reverseArray.isEmpty()){
+                        char letter = reverseArray.pop();
+                        System.out.println(letter);
+                        newFile.writeFile(fileNameOut, ""+letter);
+                    }
+                    newFile.writeFile(fileNameOut, "\n");
+                    stringArray.clear();
+                    test.count = 0;
+                }
             }
-            br2.close();
             br.close();
     }
     catch (IOException e){
@@ -326,4 +343,3 @@ class RMullinsLab1{
     }
 
 }
-

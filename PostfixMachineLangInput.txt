@@ -1,8 +1,8 @@
 ABC*+DE-/
-AB+C- 
+AB+C-
 ABC+-
 AB-C+DEF-+$
-ABCDE-+$*EF*-	
+ABCDE-+$*EF*-
 ABC+*CBA-+*
 ABC+/CBA*+ 
 AB-*CBA+-*
