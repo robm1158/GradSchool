@@ -1,4 +1,7 @@
-/* This program takes in a txt file with postfix expressions. I will read them in and parse
+/* 
+Author by Rob Mullins
+
+This program takes in a txt file with postfix expressions. I will read them in and parse
 them char by char evaluating each char. Depending on if it is an opperand or opperator.
 If it is an apperand I will push the Letter to the stack class I made. If it is an opperator
 I will follow certain rules laid out in the assignment to write commands to another file.*/
@@ -7,19 +10,22 @@ import java.io.*;
 import java.util.Scanner;
 
 
-/*Bellow is a stack class. This class contains the methods to push and pop with the constructor.
-I will use this to hold the chars I parse from the input file.*/
+/*Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
+isEmpty with the constructor. I will use this to hold the chars I parse from the input file.*/
 class stackChar{
 
+    //Here we set our class vars to hold information
     private char[] container,copy;
     private int top, max_size, curr_size;
 
+    //constructor for stackChar to intialize it
     public stackChar(int max){
         max_size = max;
         container = new char[max_size];
         top = -1;
     }
 
+    //Basic push function to add values into the stack
     public void push(char value){
         if (curr_size >= max_size){
             System.out.println("System overflow resize stack");
@@ -30,6 +36,9 @@ class stackChar{
 
 
     }
+
+    //Basic pop function to remove values into the stack
+
     public char pop(){
         if (top >= 0){
             return(container[top--]);
@@ -40,16 +49,19 @@ class stackChar{
         
     }
 
+    // Returns the size of the stack
     public int size(){
         return top;
     }
     
+    //clears the entire stack
     public void clear(){
         for (int i = 0; i < top; i++)
             container[i] = (Character)null;
         top = -1;
     }
 
+    //Checks if the stack is empty
     public boolean isEmpty(){
         if(top == -1){
             return true;
@@ -58,6 +70,8 @@ class stackChar{
             return false;
         }
     }
+
+    //private function to resize the intially allocated stack so that we dont get over_flows
     private void resize(int new_size){
 
         copy = new char[new_size];
@@ -70,6 +84,10 @@ class stackChar{
     }
 
 }
+
+/* fileTasks here contain methods to create a file and check to see if it exists already. 
+It also contains the method to write to an output file */
+
 class fileTasks{
     public void createFile(String s){
         try {
@@ -89,7 +107,6 @@ class fileTasks{
             FileWriter myWriter = new FileWriter(fileName,true);
             BufferedWriter bw = new BufferedWriter(myWriter);
             bw.write(stringToWrite);
-            //myWriter.write(stringToWrite);
             bw.close();
             System.out.println("Successfully wrote to the file.");
           } catch (IOException e) {
@@ -115,11 +132,12 @@ class postConvert{
         
         letter = someChar;
 
-/* Using an if statement instead of a switch statement mainly for ease of use and readability.
-Dont think it really provices anything or takes away from anything.*/
+    /* Using an if statement instead of a switch statement mainly for ease of use and readability.
+    Dont think it really provices anything or takes away from anything. Here we also check for the null char.*/
 
         if ((int)(letter) != 0){
             System.out.println(letter);
+            //Logic for checking for addition opperation
 
             if(letter == '+'){
                 
@@ -146,10 +164,12 @@ Dont think it really provices anything or takes away from anything.*/
                     System.out.println("LD "+(char)(secPop)+"\n"+"AD "+ (char)(firstPop)+"\n");
 
                 }
-                System.out.println("size: " +stackHold.size());
+
                 write.writeFile(fileName, "ST TEMP"+count+"\n");
                 System.out.println("ST TEMP"+count+"\n");
             }
+            //Logic for checking for subtraction opperation
+
             else if(letter == '-'){
                 count++;
                 char firstPop = stackHold.pop();
@@ -175,12 +195,13 @@ Dont think it really provices anything or takes away from anything.*/
 
                     System.out.println("LD "+(char)(secPop)+"\n"+"SB "+ (char)(firstPop)+"\n");
                 }
-                System.out.println("size: " +stackHold.size());
 
                 write.writeFile(fileName, "ST TEMP"+count+"\n");
                 System.out.println("ST TEMP"+count+"\n");
 
             }
+            //Logic for checking for multiplication opperation
+
             else if(letter == '*'){
                 count++;
                 char firstPop = stackHold.pop();
@@ -204,11 +225,12 @@ Dont think it really provices anything or takes away from anything.*/
                     write.writeFile(fileName,"LD "+(char)(secPop)+"\n"+"ML "+ (char)(firstPop)+"\n");
                     System.out.println("LD "+(char)(secPop)+"\n"+"ML "+ (char)(firstPop)+"\n");
                 }
-                System.out.println("size: " +stackHold.size());
 
                 write.writeFile(fileName, "ST TEMP"+count+"\n");
                 System.out.println("ST TEMP"+count+"\n");
             }
+            //Logic for checking for division opperation
+
             else if(letter == '/'){
                 count++;
                 char firstPop = stackHold.pop();
@@ -232,13 +254,12 @@ Dont think it really provices anything or takes away from anything.*/
                     System.out.println("LD "+(char)(secPop)+"\n"+"DV "+ (char)(firstPop)+"\n");
                 }
                 
-                System.out.println("size: " +stackHold.size());
-
                 write.writeFile(fileName, "ST TEMP"+count+"\n");
                 System.out.println("ST TEMP"+count+"\n");
                 
             }
-            /* Here I am implememnting my enhancment. I am including the $ which is a ^ in terms of math. */
+            //Here I am implememnting my enhancment. I am including the $ which is a ^ in terms of math.
+
             else if(letter == '$'){
                 count++;
                 char firstPop = stackHold.pop();
@@ -261,20 +282,26 @@ Dont think it really provices anything or takes away from anything.*/
                     write.writeFile(fileName,"LD "+(char)(secPop)+"\n"+"EX "+ (char)(firstPop)+"\n");
                     System.out.println("LD "+(char)(secPop)+"\n"+"EX "+ (char)(firstPop)+"\n");
                 }
-                System.out.println("size: " +stackHold.size());
 
                 write.writeFile(fileName, "ST TEMP"+count+"\n");
                 System.out.println("ST TEMP"+count+"\n");
                 
             }
+            // If it is not an opperation then push to stack
+
             else if(Character.isLetter(letter)){
-                System.out.println("pushing "+letter);
                 stackHold.push((letter));
             }
+            //If no letter or opperator is found we throw an exception
+
             else{
+                write.writeFile(fileName, "Did not finish File Error: No a letter or operator");
                 throw new RuntimeException("Not a letter or operator");
             }
 
+        }
+        else{
+            throw new RuntimeException("Null char encountered");
         }
     }
 }
@@ -291,12 +318,12 @@ class RMullinsLab1{
         stackChar reverseArray = new stackChar(8);
         
         try{
+            // Scanning and taking in input via terminal
             scanner = new Scanner(System.in);
             System.out.print("Enter a file name for Output: ");
             fileNameOut = scanner.next();
             System.out.print("Enter a file name for Input: ");
             fileNameIn = scanner.next();
-            
    
             postConvert test = new postConvert();
             fileTasks newFile = new fileTasks();
@@ -308,7 +335,11 @@ class RMullinsLab1{
             BufferedReader br = new BufferedReader(isr);
 
             int curr_char = 0;
-    
+            //Checking if file is empty
+            if((curr_char = br.read()) == -1){
+                throw new RuntimeException("Empty File");
+            }
+            //Reading the file in char by char
             while ((curr_char = br.read()) != -1){
                 
                 if((char)(curr_char) != '\r' && (char)(curr_char) != '\n') {
@@ -316,16 +347,16 @@ class RMullinsLab1{
                     test.convert(fileNameOut, (char)(curr_char));
                 }
                 else{
+                    char letter;
                     while(!stringArray.isEmpty()){
-                        char letter = stringArray.pop();
+                        letter = stringArray.pop();
                         reverseArray.push(letter);
                     }
                     while(!reverseArray.isEmpty()){
-                        char letter = reverseArray.pop();
-                        System.out.println(letter);
+                        letter = reverseArray.pop();
                         newFile.writeFile(fileNameOut, ""+letter);
                     }
-                    newFile.writeFile(fileNameOut, "\n");
+                    newFile.writeFile(fileNameOut,"\n------------------------------\n");
                     stringArray.clear();
                     test.count = 0;
                 }
@@ -333,6 +364,9 @@ class RMullinsLab1{
             br.close();
     }
     catch (IOException e){
+
+        //Throws excepting if some wierd file reading error occurs
+
         System.out.println("An error occurred.");
         e.printStackTrace();
         
