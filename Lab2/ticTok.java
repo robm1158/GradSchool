@@ -1,12 +1,17 @@
-public class ticTok{
+package Lab2;
+
+public class ticTok {
 
 
-public static Long tic{
+    public Long tic(){
+        long startTime = System.nanoTime();
+        return startTime;
+    }
 
-    return System.nanoTime();
-}
-
-
+    public Long toc() {
+        long endTime = System.nanoTime();
+        return endTime;
+    }
 
 
 
