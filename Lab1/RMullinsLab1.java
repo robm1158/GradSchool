@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /* Here is the main function to run the code. It also contains the routine needed to read the contents from
 the file. It will also instantiate the methods needed to run the program. */
-public class RMullinsLab1{
+class RMullinsLab1{
 
     public static void main(String[] args)throws IOException{
 
