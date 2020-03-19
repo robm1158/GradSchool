@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/home/enterprise/anaconda3/bin/python",
+    "files.associations": {
+        "HelloWorld.C": "cpp"
+    }
+}
