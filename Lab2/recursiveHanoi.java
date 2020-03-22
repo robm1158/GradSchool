@@ -1,3 +1,10 @@
+/*
+Author by Rob Mullins
+
+Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
+isEmpty with the constructor. I will use this to hold the ints I need to keep track of.
+*/
+
 package Lab2;
 
 public class recursiveHanoi{
@@ -11,7 +18,7 @@ public class recursiveHanoi{
         }
         else{
             solve(num-1, fromRod, spareRod,toRod);
-            System.out.println("Move disk " + num + " from rod " +  fromRod + " to rod " + toRod); 
+           // System.out.println("Move disk " + num + " from rod " +  fromRod + " to rod " + toRod); 
             solve(num-1, spareRod, toRod, fromRod); 
 
         }

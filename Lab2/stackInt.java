@@ -1,10 +1,14 @@
-package Lab2;
+
 
 /*
 Author by Rob Mullins
 
 Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
-isEmpty with the constructor. I will use this to hold the ints I need to keep track of.*/
+isEmpty with the constructor. I will use this to hold the ints I need to keep track of.
+*/
+
+package Lab2;
+
 public class stackInt{
 
     //Here we set our class vars to hold information
@@ -21,7 +25,7 @@ public class stackInt{
     //Basic push function to add values into the stack
     public void push(int value){
         if (curr_size >= max_size){
-            System.out.println("System overflow resize stack");
+            //System.out.println("System overflow resize stack");
             resize(max_size*2);
         }
         curr_size++;
@@ -37,7 +41,9 @@ public class stackInt{
             return(container[top--]);
         }
         else{
-            throw new RuntimeException("Stack underflow!!");
+            return(-1);
+
+            //throw new RuntimeException("Stack underflow!!");
         }
         
     }

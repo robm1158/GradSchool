@@ -1,31 +1,103 @@
-package Lab2;
+/*
+Author by Rob Mullins
 
-java.lang.Math;
+Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
+isEmpty with the constructor. I will use this to hold the ints I need to keep track of.
+*/
+package Lab2;
+import java.lang.Math;
 
 public class iterHanoi{
-    private stackInt source,desto,spare;
-    //private int
+    private stackInt source = new stackInt(4);
+    private stackInt desto = new stackInt(4);
+    private stackInt spare = new stackInt(4);
 
     public iterHanoi(int size) {
-        stackInt source = new stackInt(size);
-        stackInt desto = new stackInt(size);
-        stackInt spare = new stackInt(size);
+
+
         //initialize with bigger rods on first
         for (int iter = size; iter >= 1;iter--){
             source.push(iter);
         }
 
     }
+    public void writeToScreen( char fromRod, char toRod, int disk){
+        System.out.println("Move disk "+disk +  " from "+fromRod+" to "+toRod);
+    }
 
-    public void moveDisk(char toRod, char fromRod, int disk){
-        System.out.println("Move the disk "+disk + " from "+fromRod+" to "+toRod); 
+    public void moveDisk(stackInt sour, stackInt dest, char so, char des){
+
+        int rodSoTop = sour.pop();
+        int rodDesTop = dest.pop();
+
+        if(rodSoTop == -1 && rodDesTop == -1){
+
+            System.out.println("Both are empty");
+
+        }
+        else{
+        
+            // Error checking for empty rods
+            if( rodSoTop == -1){
+                sour.push(rodDesTop);
+                writeToScreen(des,so,rodDesTop);
+            }
+            // Error checking for empty rods
+            else if(rodDesTop == -1){
+                dest.push(rodSoTop);
+                writeToScreen(so,des,rodSoTop);
+            }
+            // If source rod has a disk bigger than desto rod push
+            else if(rodSoTop > rodDesTop){
+                sour.push(rodSoTop);
+                sour.push(rodDesTop);
+                writeToScreen(des,so,rodDesTop);
+            }
+            // If desto rod has a top disk bigger than source rod push
+            else if(rodSoTop < rodDesTop){
+                dest.push(rodDesTop);
+                dest.push(rodSoTop);
+                writeToScreen(so,des,rodSoTop);
+            }
+            // Some off case that could break it
+            else{
+                System.out.println("Error");
+            }
+        }
+            
     }
 
     public void solve(int num){
         // We know this to be true so I will use this to my advantage
         
         int totalMoves = (int)(Math.pow(2, num) - 1);
+        // Using 's' for source, 'd' for destination and 'a' for aux(spare)
+        char s = 'S', d = 'D', a = 'A',tmp;
 
+        // Switch a and d if there are an even number of disks
+
+        if(num % 2 == 0){
+            tmp = d;
+            d = a;
+            a = tmp;
+        }
+
+        for(int index = 1; index <= totalMoves; index++){
+            if(index%3 == 1){
+                moveDisk(source,desto,s,d);
+            }
+            else if(index%3 == 2){
+                moveDisk(source, spare, s, a);
+            }
+            else if(index%3 == 0){
+                moveDisk(spare, desto, a, d);
+            }
+            else{
+                // throw an error
+            }
+        }
+
+      
 
     }
 
