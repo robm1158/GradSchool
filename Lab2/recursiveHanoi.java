@@ -9,12 +9,12 @@ package Lab2;
 
 public class recursiveHanoi{
     private Lab2.fileTasks write = new fileTasks();
-
+    private Long writeTime = (long)0;
     
     public Long solve(int num, char fromRod, char toRod, char spareRod, String fileName){
         //Here we have the base case where you just move it once.
         Lab2.ticToc time = new ticToc();
-        Long writeTime = (long)0;
+        
         Long start = time.tic();
         if(num == 1){
             // Adding up the time it takes to write to file to subtract later
@@ -24,12 +24,13 @@ public class recursiveHanoi{
             // Here we will recursively call the solve function to go down
             // from here it will count down the disks
             solve(num-1, fromRod, spareRod,toRod,fileName);
-            writeTime = write.writeFile(fileName, "Move disk " + num + " from rod " +  fromRod + " to rod " + toRod + "\n") + writeTime;
+            writeTime = (write.writeFile(fileName, "Move disk " + num + " from rod " +  fromRod + " to rod " + toRod + "\n")) + writeTime;
             solve(num-1, spareRod, toRod, fromRod,fileName); 
 
         }
         Long end = time.toc();
-        Long total = (end - start) - writeTime;
+        Long total = (end - start) - (writeTime);
+        //System.out.println(writeTime);
         return total;
 
     }

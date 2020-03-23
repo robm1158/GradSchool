@@ -22,6 +22,9 @@ public class fileTasks{
             e.printStackTrace();
           }
     }
+
+    /*This method is used to write the contents to a file. It will time how long it takes and
+    return that time to use at a later time*/ 
     public Long writeFile(String fileName, String stringToWrite){
         Lab2.ticToc time = new ticToc();
 

@@ -26,28 +26,29 @@ class RMullinsLab2{
             Lab2.fileTasks newFile = new fileTasks();
             newFile.createFile(fileNameOut);
             Lab2.fileTasks write = new fileTasks();
+            int num = 10;
 
 
             Long sumRecTime = (long)0, sumIterTime = (long)0;
             int index =0;
             for(index =0; index <30;index++){
                 Lab2.recursiveHanoi runRec = new recursiveHanoi();
-                Long singleRecTime = runRec.solve(3, 'A', 'C', 'B',fileNameOut);
+                Long singleRecTime = runRec.solve(num, 'A', 'C', 'B',fileNameOut);
                 sumRecTime = singleRecTime + sumRecTime;
-                write.writeFile(fileNameOut, "Total time was " + singleRecTime + "ns with " + 4 + " disks \n") ;
+                write.writeFile(fileNameOut, "Total time was " + singleRecTime + "ns with " + num + " disks \n") ;
             }
             write.writeFile(fileNameOut, "Recursive avg time " + sumRecTime/index+ "ns\n\n\n") ;
-            System.out.println("Recursive avg time " + sumRecTime/index + "ns\n\n\n");
+            System.out.println("Recursive avg time " + sumRecTime/index + "ns\n");
 
             int iter = 0;
             for(iter =0; iter <30;iter++){
-                Lab2.iterHanoi runIter = new iterHanoi(4,fileNameOut);
-                Long singleIterTime = runIter.solve(3);
+                Lab2.iterHanoi runIter = new iterHanoi(num,fileNameOut);
+                Long singleIterTime = runIter.solve(num);
                 sumIterTime = singleIterTime + sumIterTime;
-                write.writeFile(fileNameOut, "Total time was " + singleIterTime + "ns with " + 4 + " disks \n") ;
+                write.writeFile(fileNameOut, "Total time was " + singleIterTime + "ns with " + num + " disks \n") ;
             }
-            System.out.println("Iter hanoi time " + sumIterTime/iter);
-            write.writeFile(fileNameOut, "Iter avg time " + sumIterTime/iter + "ns\n\n\n") ;
+            System.out.println("Iter avg time " + sumIterTime/iter+ "ns\n");
+            write.writeFile(fileNameOut, "Iter avg time " + sumIterTime/iter + "ns\n") ;
 
 
         }

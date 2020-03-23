@@ -17,8 +17,6 @@ import java.lang.Math;
 
 import javax.management.RuntimeErrorException;
 
-import sun.launcher.resources.launcher;
-
 public class iterHanoi{
 
     // Create private fields for the class to use
@@ -53,7 +51,7 @@ public class iterHanoi{
 
         if(rodSoTop == -1 && rodDesTop == -1){
             // Check to see if both are empty thus n= 0
-            //throw new RuntimeErrorException(null, "All rods are empty");
+            throw new RuntimeErrorException(null, "All rods are empty");
         }
         else{
         
@@ -98,6 +96,7 @@ public class iterHanoi{
         // We know this to be true so I will use this to my advantage
         
         int totalMoves = (int)(Math.pow(2, num) - 1);
+
         // Using 's' for source, 'd' for destination and 'a' for aux(spare)
         char s = 'S', d = 'D', a = 'A',tmp;
 
@@ -108,7 +107,6 @@ public class iterHanoi{
             d = a;
             a = tmp;
         }
-        Long start = time.tic();
 
         for(int index = 1; index <= totalMoves; index++){
             if(index%3 == 1){
@@ -124,7 +122,6 @@ public class iterHanoi{
                 throw new RuntimeErrorException(null, "Could not move rods");
             }
         }
-        Long end = time.toc();
         totalWrite = (totalWrite - sumWrite);
         return totalWrite;
 
