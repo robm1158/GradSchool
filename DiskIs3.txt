@@ -1,0 +1,486 @@
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 1041000ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 758700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 956500ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 772500ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 759300ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 703200ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 760100ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 753800ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 833600ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 827000ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 706700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 682500ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 719300ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 688000ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 720800ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 830800ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 726700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 823700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 713700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 702700ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 747900ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 688800ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 883800ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 718200ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 670500ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 687900ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 715100ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 692600ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 785100ns with 4 disks 
+Move disk 1 from rod A to rod C
+Move disk 2 from rod A to rod B
+Move disk 1 from rod C to rod B
+Move disk 3 from rod A to rod C
+Move disk 1 from rod B to rod A
+Move disk 2 from rod B to rod C
+Move disk 1 from rod A to rod C
+Total time was 682500ns with 4 disks 
+Recursive avg time 758433ns
+
+
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 135100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 51800ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 41100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 40700ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 35800ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 32700ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 34300ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 29600ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 34700ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 32600ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 33600ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 35200ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 33300ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 28500ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 23100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 22800ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 23500ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 67800ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 23400ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 17200ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 17100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 18100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 20000ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 18100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 22200ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 25200ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 15000ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 17800ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 16100ns with 4 disks 
+Move disk 1 from rod S to rod D
+Move disk 2 from rod S to rod A
+Move disk 1 from rod D to rod A
+Move disk 3 from rod S to rod D
+Move disk 1 from rod A to rod S
+Move disk 2 from rod A to rod D
+Move disk 1 from rod S to rod D
+Total time was 16200ns with 4 disks 
+Iter avg time 32086ns
+
+

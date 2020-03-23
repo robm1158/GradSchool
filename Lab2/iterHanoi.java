@@ -15,14 +15,23 @@ the logic of what goes where.
 package Lab2;
 import java.lang.Math;
 
+import javax.management.RuntimeErrorException;
+
+import sun.launcher.resources.launcher;
+
 public class iterHanoi{
 
     // Create private fields for the class to use
     private stackInt source = new stackInt(4);
     private stackInt desto = new stackInt(4);
     private stackInt spare = new stackInt(4);
+    private Lab2.fileTasks write = new fileTasks();
+    private Lab2.ticToc time = new ticToc();
+    private Long sumWrite = (long)0, totalWrite = (long)0;
+    private String fileName;
 
-    public iterHanoi(int size) {
+    public iterHanoi(int size, String fileNameOut) {
+        fileName = fileNameOut;
         //initialize with bigger rods on first
         for (int iter = size; iter >= 1;iter--){
             source.push(iter);
@@ -35,49 +44,57 @@ public class iterHanoi{
 
     //This method will do the pushing of the disks to different rods
 
-    public void moveDisk(stackInt sour, stackInt dest, char so, char des){
+    public Long moveDisk(stackInt sour, stackInt dest, char so, char des){
+        Long start = time.tic();
 
+        
         int rodSoTop = sour.pop();
         int rodDesTop = dest.pop();
 
         if(rodSoTop == -1 && rodDesTop == -1){
             // Check to see if both are empty thus n= 0
-            System.out.println("Both are empty");
-
+            //throw new RuntimeErrorException(null, "All rods are empty");
         }
         else{
         
             // Error checking for empty rods
             if( rodSoTop == -1){
                 sour.push(rodDesTop);
-                writeToScreen(des,so,rodDesTop);
+                sumWrite = write.writeFile(fileName, "Move disk " + rodDesTop + 
+                " from rod " +  des + " to rod " + so + "\n") + sumWrite;
             }
             // Error checking for empty rods
             else if(rodDesTop == -1){
                 dest.push(rodSoTop);
-                writeToScreen(so,des,rodSoTop);
+                sumWrite = write.writeFile(fileName, "Move disk " + rodSoTop + 
+                " from rod " +  so + " to rod " + des + "\n") + sumWrite;
             }
             // If source rod has a disk bigger than desto rod push
             else if(rodSoTop > rodDesTop){
                 sour.push(rodSoTop);
                 sour.push(rodDesTop);
-                writeToScreen(des,so,rodDesTop);
+                sumWrite = write.writeFile(fileName, "Move disk " + rodDesTop + 
+                " from rod " +  des + " to rod " + so + "\n") + sumWrite;
             }
             // If desto rod has a top disk bigger than source rod push
             else if(rodSoTop < rodDesTop){
                 dest.push(rodDesTop);
                 dest.push(rodSoTop);
-                writeToScreen(so,des,rodSoTop);
+                sumWrite = write.writeFile(fileName, "Move disk " + rodSoTop + 
+                " from rod " +  so + " to rod " + des + "\n") + sumWrite;
             }
             // Some off case that could break it
             else{
-                System.out.println("Error");
+                throw new RuntimeErrorException(null, "Could not move rods");
+
             }
         }
+        Long end = time.toc();
+        return (end-start);
             
     }
 
-    public void solve(int num){
+    public Long solve(int num){
         // We know this to be true so I will use this to my advantage
         
         int totalMoves = (int)(Math.pow(2, num) - 1);
@@ -91,23 +108,25 @@ public class iterHanoi{
             d = a;
             a = tmp;
         }
+        Long start = time.tic();
 
         for(int index = 1; index <= totalMoves; index++){
             if(index%3 == 1){
-                moveDisk(source,desto,s,d);
+                totalWrite = moveDisk(source,desto,s,d) + totalWrite;
             }
             else if(index%3 == 2){
-                moveDisk(source, spare, s, a);
+                totalWrite = moveDisk(source, spare, s, a) + totalWrite;
             }
             else if(index%3 == 0){
-                moveDisk(spare, desto, a, d);
+                totalWrite = moveDisk(spare, desto, a, d) + totalWrite;
             }
             else{
-                // throw an error
+                throw new RuntimeErrorException(null, "Could not move rods");
             }
         }
-
-      
+        Long end = time.toc();
+        totalWrite = (totalWrite - sumWrite);
+        return totalWrite;
 
     }
 
