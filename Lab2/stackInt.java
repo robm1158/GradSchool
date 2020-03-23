@@ -25,16 +25,14 @@ public class stackInt{
     //Basic push function to add values into the stack
     public void push(int value){
         if (curr_size >= max_size){
-            //System.out.println("System overflow resize stack");
             resize(max_size*2);
         }
         curr_size++;
         container[++top] = value;
-
-
     }
 
-    //Basic pop function to remove values into the stack
+    //Basic pop function to remove values into the stack.
+    //I rely on the -1 for later use so I do not throw an error here
 
     public int pop(){
         if (top >= 0){
@@ -42,8 +40,6 @@ public class stackInt{
         }
         else{
             return(-1);
-
-            //throw new RuntimeException("Stack underflow!!");
         }
         
     }

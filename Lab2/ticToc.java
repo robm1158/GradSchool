@@ -1,14 +1,15 @@
 /*
 Author by Rob Mullins
 
-Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
-isEmpty with the constructor. I will use this to hold the ints I need to keep track of.
+Bellow is a timeing class. We have two methods tic and toc
+(names copied from Matlab timing function). These methods take the time
+in nano second. I use tic to take the start time and toc to take the end
+time.
 */
 
 package Lab2;
 
-public class ticTok {
-
+public class ticToc {
 
     public Long tic(){
         long startTime = System.nanoTime();
@@ -19,8 +20,4 @@ public class ticTok {
         long endTime = System.nanoTime();
         return endTime;
     }
-
-
-
-
 }

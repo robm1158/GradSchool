@@ -1,20 +1,28 @@
 /*
 Author by Rob Mullins
 
-Bellow is a stack class. This class contains the methods to push, pop, resize, size, and 
-isEmpty with the constructor. I will use this to hold the ints I need to keep track of.
+Below is the iter version of the TOH problem. Though more
+involved than the recursive method, still not bad. Here we have
+a few methods. The constructor intializes the three stacks
+we will use through out. It also auto populates the source rod
+from biggest on bottom to smallest on top. I intialize the 
+rods to be small as the stack method can re-size on the fly.
+The moveDisk method is used to move the actual disks from rod
+to rod and push them to the perspective stacks. The solve method
+is what impliments the moveDisk function. It also is what maintains
+the logic of what goes where.
 */
 package Lab2;
 import java.lang.Math;
 
 public class iterHanoi{
+
+    // Create private fields for the class to use
     private stackInt source = new stackInt(4);
     private stackInt desto = new stackInt(4);
     private stackInt spare = new stackInt(4);
 
     public iterHanoi(int size) {
-
-
         //initialize with bigger rods on first
         for (int iter = size; iter >= 1;iter--){
             source.push(iter);
@@ -25,13 +33,15 @@ public class iterHanoi{
         System.out.println("Move disk "+disk +  " from "+fromRod+" to "+toRod);
     }
 
+    //This method will do the pushing of the disks to different rods
+
     public void moveDisk(stackInt sour, stackInt dest, char so, char des){
 
         int rodSoTop = sour.pop();
         int rodDesTop = dest.pop();
 
         if(rodSoTop == -1 && rodDesTop == -1){
-
+            // Check to see if both are empty thus n= 0
             System.out.println("Both are empty");
 
         }
