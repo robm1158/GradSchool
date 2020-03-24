@@ -16,14 +16,17 @@ public class iterHanoi{
         }
 
     }
+public void moveDisk(){
+    
+}
 
-    public void moveDisk(char toRod, char fromRod, int disk){
-        System.out.println("Move the disk "+disk + " from "+fromRod+" to "+toRod); 
-    }
+    //public void moveDisk(char toRod, char fromRod, int disk){
+      //  System.out.println("Move the disk "+disk + " from "+fromRod+" to "+toRod); 
+    //}
 
     public void solve(int num){
         // We know this to be true so I will use this to my advantage
-        
+
         int totalMoves = (int)(Math.pow(2, num) - 1);
 
 
