@@ -30,7 +30,6 @@ public class recursiveHanoi{
         }
         Long end = time.toc();
         Long total = (end - start) - (writeTime);
-        //System.out.println(writeTime);
         return total;
 
     }
