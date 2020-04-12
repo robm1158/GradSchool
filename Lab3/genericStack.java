@@ -1,0 +1,62 @@
+package Lab3;
+
+public class genericStack<T> extends Object{
+
+    private T[] container;
+    private int top,maxSize,currSize;
+
+    @SuppressWarnings("unchecked")
+    public genericStack(int max){
+        this.maxSize = max;
+        this.container = (T[]) new Object[maxSize];
+        this.top = -1;
+
+    }
+
+    public void push(T data){
+        if(currSize >= maxSize){
+            this.resize();
+        }
+        this.currSize++;
+        this.container[++top] = data;
+
+    }
+
+    public T pop(){
+        if( top < 0){
+            //throw exception??
+        }
+        T data = this.container[top--];
+        return data;
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void resize(){
+        T[] newStack = (T[]) new Object[this.maxSize*2];
+        for(int index = 0; index < maxSize; index++){
+            newStack[index] = this.container[index];
+        }
+        this.container = newStack;
+        this.maxSize = this.maxSize*2;
+    }
+
+    public int size(){
+        return this.top;
+    }
+
+    public boolean isEmpty(){
+        if(this.top == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+
+
+
+
+}
