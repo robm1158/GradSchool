@@ -1,5 +1,7 @@
 package Lab3;
 
+import java.util.EmptyStackException;
+
 public class genericStack<T> extends Object{
 
     private T[] container;
@@ -22,12 +24,15 @@ public class genericStack<T> extends Object{
 
     }
 
-    public T pop(){
+    public T pop() throws EmptyStackException{
         if( top < 0){
-            //throw exception??
+            throw new EmptyStackException();
         }
-        T data = this.container[top--];
-        return data;
+        else{
+            T data = this.container[top--];
+            return data;
+        }
+
 
     }
 
@@ -45,6 +50,10 @@ public class genericStack<T> extends Object{
         return this.top;
     }
 
+    public T peek() {
+        return container[top];
+    }
+
     public boolean isEmpty(){
         if(this.top == -1){
             return true;
@@ -54,9 +63,6 @@ public class genericStack<T> extends Object{
         }
 
     }
-
-
-
 
 
 }

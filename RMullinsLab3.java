@@ -8,10 +8,11 @@ public class RMullinsLab3 {
 
         String fileName = "D:\\Code\\GradSchool\\Lab3\\FreqTable.txt";
 
-        Lab3.fileRead files = new Lab3.fileRead(fileName);
+        Lab3.fileManipulation files = new Lab3.fileManipulation(fileName);
         files.inputFileData();
-        //files.print();
         
+        files.sortData();
+        files.print();
     }
 
 }
