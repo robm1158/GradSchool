@@ -18,8 +18,7 @@ public class huffmanTree {
 
     public void buildHuffmanTree(){
         Lab3.fileManipulation files = new Lab3.fileManipulation(fileName,gs);
-        
-        while(gs.size() > 1){
+        while(gs.size() > 0){
             Lab3.huffmanNode newhn = new Lab3.huffmanNode();
 
             hn1 = (Lab3.huffmanNode)gs.pop();
@@ -35,9 +34,12 @@ public class huffmanTree {
     
 
         }
+        hn = (Lab3.huffmanNode)gs.pop();
 
 
-        files.preorderPrint();
+        //files.print();
+        String s ="";
+        files.preorderPrint(hn,s);
 
 
     }

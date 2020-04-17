@@ -97,17 +97,18 @@ public class fileManipulation {
     public void setHuffmanStack(genericStack<Lab3.huffmanNode> gshn){
         gs = gshn;
     }
-
-    public void preorderPrint(Lab3.huffmanNode hn){
-        Lab3.huffmanNode hn = new Lab3.huffmanNode();
-        hn = (Lab3.huffmanNode)gs.pop();
-        if(gs.size() < 1){
+ 
+    public void preorderPrint(Lab3.huffmanNode hn, String s){
+        //Lab3.huffmanNode hn = new Lab3.huffmanNode();
+        //hn = (Lab3.huffmanNode)gs.pop();
+        if(hn.left == null && hn.right == null && !hn.s.isEmpty()){
+            System.out.println(hn.s + ": " + hn.data + ": "+ s);
             return;
         }
-        System.out.println(hn.s + ": " + hn.data);
 
-        preorderPrint(hn.left);
-        preorderPrint(hn.right);
+
+        preorderPrint(hn.left,s + "0");
+        preorderPrint(hn.right,s + "1");
 
     }
     
