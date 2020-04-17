@@ -33,7 +33,6 @@ public class genericStack<T> extends Object{
             return data;
         }
 
-
     }
 
     @SuppressWarnings("unchecked")

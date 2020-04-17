@@ -9,8 +9,9 @@ public class fileManipulation {
     File fileName;
     private Lab3.genericStack gs = new genericStack<Lab3.huffmanNode>(10);
 
-    public fileManipulation(String file){
+    public fileManipulation(String file,genericStack<Lab3.huffmanNode> temp){
         fileName = new File(file);
+        gs = temp;
 
     }
 
@@ -31,8 +32,6 @@ public class fileManipulation {
                     hn.left = null;
                     hn.right = null;
                     gs.push(hn);
-                 //   System.out.println(hn.s);
-                   // System.out.println(hn.data);
                 }
                 else{
                     scan.close();
@@ -55,7 +54,7 @@ public class fileManipulation {
 
     }
 
-    public void sortData(){
+    public genericStack<Lab3.huffmanNode> sortData(){
         Lab3.genericStack tgs = new genericStack<Lab3.huffmanNode>(10);
         Lab3.huffmanNode hn = new Lab3.huffmanNode();
         Lab3.huffmanNode thn = new Lab3.huffmanNode();
@@ -65,21 +64,21 @@ public class fileManipulation {
             int tmp = hn.data;
             try{
                 
-                System.out.println("Above inner loop");
-                boolean exitLopp = false;
-                while(!exitLopp){
+                boolean exitLoop = false;
+                while(!exitLoop){
                     if(!tgs.isEmpty()){
                         thn = (Lab3.huffmanNode)tgs.pop();
-                        if(thn.data < tmp){
+                        if((thn.data < tmp)){
+                            
                             this.gs.push(thn);
                         }
                         else{
-                            exitLopp = true;
+                            exitLoop = true;
                             tgs.push(thn);
                         }
                     }
                     else{
-                        exitLopp = true;
+                        exitLoop = true;
 
                     }
                 }
@@ -88,10 +87,29 @@ public class fileManipulation {
             catch(EmptyStackException e){
                 e.printStackTrace();
             }
-            System.out.println("push to temp stack " + tmp);
 
             tgs.push(hn);
         }
-        
+        gs = tgs;
+        return gs;
     }
+
+    public void setHuffmanStack(genericStack<Lab3.huffmanNode> gshn){
+        gs = gshn;
+    }
+
+    public void preorderPrint(Lab3.huffmanNode hn){
+        Lab3.huffmanNode hn = new Lab3.huffmanNode();
+        hn = (Lab3.huffmanNode)gs.pop();
+        if(gs.size() < 1){
+            return;
+        }
+        System.out.println(hn.s + ": " + hn.data);
+
+        preorderPrint(hn.left);
+        preorderPrint(hn.right);
+
+    }
+    
+
 }
