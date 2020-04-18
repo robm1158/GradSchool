@@ -98,7 +98,7 @@ public class fileManipulation {
         gs = gshn;
     }
  
-    public void preorderPrint(Lab3.huffmanNode hn, String s){
+    public void binaryPrint(Lab3.huffmanNode hn, String s){
         //Lab3.huffmanNode hn = new Lab3.huffmanNode();
         //hn = (Lab3.huffmanNode)gs.pop();
         if(hn.left == null && hn.right == null && !hn.s.isEmpty()){
@@ -107,10 +107,47 @@ public class fileManipulation {
         }
 
 
-        preorderPrint(hn.left,s + "0");
-        preorderPrint(hn.right,s + "1");
+        binaryPrint(hn.left,s + "0");
+        binaryPrint(hn.right,s + "1");
+
+    }
+
+    public void inputEncodedData(genericStack<Lab3.encodedData> gsEncodedData){
+        Lab3.encodedData ed = new Lab3.encodedData();
+
+        try{
+            Scanner scan = new Scanner(fileName);
+            int counter = 0;
+            while(scan.hasNextLine()){
+                counter = scan.next().length() + counter;     
+            }
+            System.out.println(counter);
+            while(counter >= 0){
+                ed.c = scan.next().charAt(counter);
+                gs.push(ed.c);
+                counter--;
+
+            }
+        }
+        catch(IOException e){
+            e.getStackTrace();
+        }
+
+    }
+
+    public void reverseHuffNode(){
+
+        Lab3.genericStack tempgs = new genericStack<Lab3.huffmanNode>(gs.size());
+        while(gs.size() >= 0){
+            tempgs.push(gs.pop());
+        }
+        gs = tempgs;
+
+    }
+
+    public void reverseEncodedData(){
 
     }
     
 
-}
+} 

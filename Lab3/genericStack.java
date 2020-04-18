@@ -45,6 +45,16 @@ public class genericStack<T> extends Object{
         this.maxSize = this.maxSize*2;
     }
 
+   /* public void reverse(){
+        T[] newStack = (T[]) new Object[this.maxSize];
+        int count = 1;
+        for(int index = currSize; index > 0; index--){
+            newStack[index] = this.container[count++];
+        }
+        this.container = newStack;
+
+    }*/
+
     public int size(){
         return this.top;
     }

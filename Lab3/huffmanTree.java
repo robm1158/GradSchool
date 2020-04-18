@@ -39,7 +39,7 @@ public class huffmanTree {
 
         //files.print();
         String s ="";
-        files.preorderPrint(hn,s);
+        files.binaryPrint(hn,s);
 
 
     }
