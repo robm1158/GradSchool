@@ -112,29 +112,6 @@ public class fileManipulation {
 
     }
 
-    public void inputEncodedData(genericStack<Lab3.encodedData> gsEncodedData){
-        Lab3.encodedData ed = new Lab3.encodedData();
-
-        try{
-            Scanner scan = new Scanner(fileName);
-            int counter = 0;
-            while(scan.hasNextLine()){
-                counter = scan.next().length() + counter;     
-            }
-            System.out.println(counter);
-            while(counter >= 0){
-                ed.c = scan.next().charAt(counter);
-                gs.push(ed.c);
-                counter--;
-
-            }
-        }
-        catch(IOException e){
-            e.getStackTrace();
-        }
-
-    }
-
     public void reverseHuffNode(){
 
         Lab3.genericStack tempgs = new genericStack<Lab3.huffmanNode>(gs.size());
@@ -144,10 +121,5 @@ public class fileManipulation {
         gs = tempgs;
 
     }
-
-    public void reverseEncodedData(){
-
-    }
-    
 
 } 
