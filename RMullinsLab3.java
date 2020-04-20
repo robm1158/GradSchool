@@ -22,14 +22,16 @@ public class RMullinsLab3 {
 
 
         Lab3.huffmanTree ht = new Lab3.huffmanTree(gs,gs.size(),fileName);
-        ht.buildHuffmanTree();
+        Lab3.huffmanNode hn = new Lab3.huffmanNode();
+
+        hn = ht.buildHuffmanTree();
         
         Lab3.encodedData encodedDataArray = new Lab3.encodedData();
         dataArray = encodeFiles.inputEncodedData(gsEncodedData);
 
         while(dataArray.size() > -1){
             encodedDataArray.c =  (char[])dataArray.pop();
-            System.out.println(encodedDataArray.c);
+            encodeFiles.decodeData(encodedDataArray.c,hn);
             
         }
 

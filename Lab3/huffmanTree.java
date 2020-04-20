@@ -16,7 +16,7 @@ public class huffmanTree {
         fileName = file;
     }
 
-    public void buildHuffmanTree(){
+    public Lab3.huffmanNode buildHuffmanTree(){
         Lab3.fileManipulation files = new Lab3.fileManipulation(fileName,gs);
         while(gs.size() > 0){
             Lab3.huffmanNode newhn = new Lab3.huffmanNode();
@@ -26,8 +26,28 @@ public class huffmanTree {
             newhn.data = hn1.data+hn2.data;
             String sortedString = stringSort(hn1.s, hn2.s);
             newhn.s = sortedString;
-            newhn.left = hn1;
-            newhn.right = hn2;
+            //hn1.s.length > hn2.s.length
+            boolean flip = false;
+            if (hn1.data > hn2.data) {
+                flip = true;
+            } else if (hn1.data == hn2.data) {
+                if (hn1.s.length() > hn2.s.length()) {
+                    flip = true;
+                } else if (hn1.s.length() == hn2.s.length()) {
+                    if (hn1.s.charAt(0) > hn2.s.charAt(0)) {
+                        flip = true;
+                    }
+                }
+            }
+            
+            if (flip) {
+                newhn.left = hn2;
+                newhn.right = hn1;
+            } else {
+                newhn.left = hn1;
+                newhn.right = hn2;
+            }
+
             gs.push(newhn);
             files.setHuffmanStack(gs);
             gs = files.sortData();
@@ -40,6 +60,7 @@ public class huffmanTree {
         //files.print();
         String s ="";
         files.binaryPrint(hn,s);
+        return hn;
 
 
     }
