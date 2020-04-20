@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class fileManipulation {
     File fileName;
     private Lab3.genericStack gs = new genericStack<Lab3.huffmanNode>(10);
+    private Lab3.hashTable ht = new hashTable();
+
 
     public fileManipulation(String file,genericStack<Lab3.huffmanNode> temp){
         fileName = new File(file);
@@ -48,8 +50,8 @@ public class fileManipulation {
         Lab3.huffmanNode hn = new Lab3.huffmanNode();
         while(gs.size() >= 0){
             hn = (Lab3.huffmanNode)gs.pop();
-            System.out.println("Out of the generic: " + hn.s);
-            System.out.println("Out of the generic: " + hn.data);
+           // System.out.println("Out of the generic: " + hn.s);
+           // System.out.println("Out of the generic: " + hn.data);
         }
 
     }
@@ -98,17 +100,18 @@ public class fileManipulation {
         gs = gshn;
     }
  
-    public void binaryPrint(Lab3.huffmanNode hn, String s){
-        //Lab3.huffmanNode hn = new Lab3.huffmanNode();
-        //hn = (Lab3.huffmanNode)gs.pop();
+    public Lab3.hashTable binaryPrint(Lab3.huffmanNode hn, String s){
+
         if(hn.left == null && hn.right == null && !hn.s.isEmpty()){
-            System.out.println(hn.s + ": " + hn.data + ": "+ s);
-            return;
+            //System.out.println(hn.s + ": " + hn.data + ": "+ s);
+            ht.setLetterInArray(hn.s.charAt(0));
+            ht.setBinaryInArray(hn.s.charAt(0), s);
         }
-
-
-        binaryPrint(hn.left,s + "0");
-        binaryPrint(hn.right,s + "1");
+        else{
+            binaryPrint(hn.left,s + "0");
+            binaryPrint(hn.right,s + "1");
+        }
+        return ht;
 
     }
 

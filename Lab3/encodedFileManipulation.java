@@ -8,6 +8,7 @@ public class encodedFileManipulation {
     File fileName;
     private Lab3.genericStack gs = new genericStack<Lab3.encodedData>(15);
     private int currentFileIndex = 0;
+    
     public encodedFileManipulation(String file,genericStack<Lab3.encodedData> temp){
         fileName = new File(file);
         gs = temp;
@@ -56,7 +57,7 @@ public class encodedFileManipulation {
         while(currentFileIndex < data.length){
             decoded += f(data, ht);
         }
-        System.out.println(decoded);
+        //System.out.println(decoded);
         return decoded;
     }
 

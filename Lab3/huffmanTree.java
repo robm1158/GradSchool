@@ -3,10 +3,13 @@ package Lab3;
 public class huffmanTree {
     int MaxSize;
     String fileName;
+    Lab3.hashTable ht = new hashTable();
+
     private Lab3.genericStack gs = new genericStack<Lab3.huffmanNode>(MaxSize);
     private Lab3.huffmanNode hn1 = new Lab3.huffmanNode();
     private Lab3.huffmanNode hn2= new Lab3.huffmanNode();
     private Lab3.huffmanNode hn = new Lab3.huffmanNode();
+
     
 
 
@@ -39,7 +42,7 @@ public class huffmanTree {
                     }
                 }
             }
-            
+
             if (flip) {
                 newhn.left = hn2;
                 newhn.right = hn1;
@@ -59,7 +62,8 @@ public class huffmanTree {
 
         //files.print();
         String s ="";
-        files.binaryPrint(hn,s);
+        ht = files.binaryPrint(hn,s);
+        //ht.printArray();
         return hn;
 
 
@@ -92,6 +96,10 @@ public class huffmanTree {
         return sortedString;
 
 
+    }
+
+    public Lab3.hashTable getHashTable(){
+        return ht;
     }
 
 }
