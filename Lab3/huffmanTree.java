@@ -1,6 +1,12 @@
+// Rob Mullins
+// This file contains the code to build a huffman tree fome a stack containing
+// an ordered freq table read in from a file.
+
 package Lab3;
 
 public class huffmanTree {
+
+    // Intial vars to use through out the file.
     int MaxSize;
     String fileName;
     Lab3.hashTable ht = new hashTable();
@@ -11,13 +17,18 @@ public class huffmanTree {
     private Lab3.huffmanNode hn = new Lab3.huffmanNode();
 
     
-
+    // COnstructor reading in vars needed from other files.
+    // Also set class vars to use.
 
     public huffmanTree(genericStack<Lab3.huffmanNode> gshn, int size,String file){
         gs = gshn;
         MaxSize = size;
         fileName = file;
     }
+
+    // Main code to build the huffman tree from the stack passed in the constructor
+    // Here also lies the tir breakers for pushing the huffman nodes in the
+    // correct order given by complexit and alpha order.
 
     public Lab3.huffmanNode buildHuffmanTree(){
         Lab3.fileManipulation files = new Lab3.fileManipulation(fileName,gs);
@@ -29,7 +40,6 @@ public class huffmanTree {
             newhn.data = hn1.data+hn2.data;
             String sortedString = stringSort(hn1.s, hn2.s);
             newhn.s = sortedString;
-            //hn1.s.length > hn2.s.length
             boolean flip = false;
             if (hn1.data > hn2.data) {
                 flip = true;
@@ -60,23 +70,30 @@ public class huffmanTree {
         hn = (Lab3.huffmanNode)gs.pop();
 
 
-        //files.print();
         String s ="";
         ht = files.binaryPrint(hn,s);
-        //ht.printArray();
         return hn;
 
 
     }
 
-    public void print(){
-        while(gs.size() >= 0){
-            hn = (Lab3.huffmanNode)gs.pop();
-            System.out.println("Out of the generic: " + hn.s);
-            System.out.println("Out of the generic: " + hn.data);
+    // Pre order traversal print. A recursive solution to print it out
+
+    public void print(Lab3.huffmanNode hn){
+        if(hn.left == null && hn.right == null && !hn.s.isEmpty()){
+            System.out.println(hn.s + ": " + hn.data);
+
+            return;
         }
+        System.out.println(hn.s + ": " + hn.data);
+        print(hn.left);
+        print(hn.right);
 
     }
+
+    // This function will sort the strings of the nodes in numeric order
+    // This also impliments a bubble sort to do so. This returns the 
+    // ordered string
 
     public String stringSort(String string1,String string2){
         String string = string1 + string2;
@@ -97,6 +114,9 @@ public class huffmanTree {
 
 
     }
+
+    // A simple getter function to retrieve the built in
+    // huffman tree
 
     public Lab3.hashTable getHashTable(){
         return ht;
