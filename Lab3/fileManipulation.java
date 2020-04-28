@@ -109,6 +109,7 @@ public class fileManipulation {
                 
             }
             catch(EmptyStackException e){
+                System.out.println("Corrupted data");
                 e.printStackTrace();
             }
 

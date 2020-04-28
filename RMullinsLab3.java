@@ -73,7 +73,7 @@ public class RMullinsLab3 {
         }
         // Catch eny errors from bad files
         catch(RuntimeException exception){
-            System.out.println("An error occurred.");
+            System.out.println("File Does Not Exist");
             exception.printStackTrace();
 
         }
