@@ -13,8 +13,6 @@ public class createData{
     private ArrayList<Integer> classDescSet = new ArrayList<Integer>();
     private List<Integer> orderList = new ArrayList<Integer>(); 
 
-
-
     public void generateRandomData(int min, int max, int size){
         ArrayList<Integer> set = new ArrayList<Integer>(size);
 
@@ -75,7 +73,6 @@ public class createData{
         System.out.println(classRandomSet);
         System.out.println(classUniqueSet);
         System.out.println(orderList);
-
 
     }
 
