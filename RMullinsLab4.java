@@ -6,13 +6,14 @@ public class RMullinsLab4 {
     static void printArray(int arr[]) 
     { 
         int n = arr.length; 
-        for (int i=0; i<n; ++i) 
+        for (int i=0; i<n; i++) 
             System.out.print(arr[i]+" "); 
         System.out.println(); 
     }
 
-
     public static void main(String[] args)throws RuntimeException{
+
+        //https://www.boraji.com/java-how-to-list-txt-file-in-a-directory
 
 		File directoryPath = new File("D:\\Code\\GradSchool\\");
 
@@ -24,18 +25,17 @@ public class RMullinsLab4 {
 			}
 		});
 		
-
-
         try{
             for (File file : files) {
-                System.out.println(file.getName());
+                //System.out.println(file.getName());
             
                 String fileName = file.getName();
-                //"E:\\Maters\\DataStructures\\Module 13\\Lab4InputFiles-1\\Lab 4 Input Files\\asc50.dat";
-                Lab4.readData data = new Lab4.readData(fileName);
+                Lab4.readData data = new Lab4.readData("randUniq50.txt");
                 Lab4.heapSort testing = new Lab4.heapSort();
+                Lab4.quickSort testQuick = new Lab4.quickSort();
                 int[] test = data.readInData();
-                testing.sort(test);
+                testQuick.sort(test, 0, test.length-1);
+                //testing.sort(test);
                 printArray(test);
 
                 // Lab4.createData genData = new Lab4.createData();
@@ -50,6 +50,5 @@ public class RMullinsLab4 {
         catch(Exception e){
             e.printStackTrace();
         }
-        
     }
 }
