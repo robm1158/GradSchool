@@ -31,7 +31,6 @@ public class quickSort {
         if(low < high){
             int pi = partition(array,low,high);
             if (((pi-1) - low <= 50) || (high - (pi +1) >= 50)){
-                System.out.println("In insertion");
                 Lab4.insertionSort finishSort = new insertionSort();
                 finishSort.sort(array);
             }
