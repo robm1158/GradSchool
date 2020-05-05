@@ -1,6 +1,17 @@
+/*
+Author by Rob Mullins
+
+Bellow is a recursive solution to a heap sort. THe main driver 
+being the heapify. Heapify impliments the max heap idea and brings
+the largest to the top and takes it off to order it.
+*/
+
 package Lab4;
 
 public class heapSort {
+
+    // Impliments heapify and sorts out which way to call it
+    // based off conditions.
 
     public void sort(int[] array){
         int len = array.length;
@@ -15,6 +26,10 @@ public class heapSort {
             heapify(array,index,0);
         }
     }
+
+    // Impliments the max heap style method of heapify. This 
+    // will check the root node with the leaves and makes sure its
+    // biggest and takes it off to sort
 
     private void heapify(int array[], int size, int node){
         int largeNode = node;

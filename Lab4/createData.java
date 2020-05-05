@@ -1,10 +1,19 @@
 
+/*
+Author by Rob Mullins
+
+Bellow is a class use to generate data. This is a utility class,
+as it is not needed in the assignment. 
+*/
 package Lab4;
 
 import java.util.*;
 import java.io.*;
 
 public class createData{
+
+    // Below are the global class vars used through out the class
+
     long seed = System.currentTimeMillis();
     private Random random = new Random(seed);
     private HashSet<Integer> classUniqueSet = new HashSet<Integer>();
@@ -12,6 +21,10 @@ public class createData{
     private ArrayList<Integer> classAscSet = new ArrayList<Integer>();
     private ArrayList<Integer> classDescSet = new ArrayList<Integer>();
     private List<Integer> orderList = new ArrayList<Integer>(); 
+
+    // The bellow function generates random data from a range of min-max
+    // with a given size. This is not sudo random as i generate a seed
+    // based on system clock.
 
     public void generateRandomData(int min, int max, int size){
         ArrayList<Integer> set = new ArrayList<Integer>(size);
@@ -24,9 +37,10 @@ public class createData{
             set.add(x);
             count++;
         }
-        //List<String> list = new ArrayList<String>(set); 
         classRandomSet = set;
     }
+
+    // This method creates data in ascending order
 
     public void generateAscOrderedData(int min, int max){
         ArrayList<Integer> set = new ArrayList<Integer>(max);
@@ -37,6 +51,8 @@ public class createData{
         classAscSet = set;
     }
 
+    // This method generates data in descending order
+
     public void generateDescOrderedData(int min, int max){
         ArrayList<Integer> set = new ArrayList<Integer>(max);
 
@@ -46,7 +62,11 @@ public class createData{
         classDescSet = set;
     }
 
+
     // Inspired by http://www.instanceofjava.com/2016/08/random-number-generator-java-range.html
+    // The below generates a unique set of random data, guaranteed to not have any duplicates 
+    // make sure max > size otherwise wont work, inspired by the above but not 100% copied.
+
     public void generateUniqueData(int min, int max, int size){
         HashSet set = new HashSet<Integer>(size);
 
@@ -60,12 +80,18 @@ public class createData{
         classUniqueSet = set;
 
     }
+
+    // This orders the unique data set so that we can compare sorts with this type 
+    // of data.
+
     public void orderUniqueData(){
         List<Integer> list = new ArrayList<Integer>(classUniqueSet); 
         Collections.sort(list);
         orderList = list;
 
     }
+
+    // Utility function to print the data generated
 
     public void printAllData(){
         System.out.println(classAscSet);
@@ -75,6 +101,9 @@ public class createData{
         System.out.println(orderList);
 
     }
+
+    // This method writes data to text files based on the size of the data generated.
+    // also catches errors as needed.
 
     public void generateFiles(){
         if(!classAscSet.isEmpty()){

@@ -1,3 +1,14 @@
+/*
+Author by Rob Mullins
+
+Bellow is the driver for all my sorts. Here i read through all the files in the 
+current folder and read in the data as an int[]. Once this happens I pass the 
+data into the sort and run it 100 times to get the best statistical avg of
+the time skipping the first time as that is orders of magnitude larger than
+the other runs. I also include a way to generate your own data sets. This file
+also prints out the times after sort to screen.
+*/
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.File;
@@ -6,7 +17,8 @@ import java.io.FilenameFilter;
 public class RMullinsLab4 {
 
     public static void main(String[] args)throws RuntimeException{
-        
+        // Generates data as specified by the inputs. Must turn true
+        // inorder to gen data. Not always needed.
         boolean creategen = false;
         if(creategen){
             Lab4.createData genData = new Lab4.createData();
@@ -20,6 +32,7 @@ public class RMullinsLab4 {
         }
 
         //https://www.boraji.com/java-how-to-list-txt-file-in-a-directory
+        // Below is a cpoied method to read all txt files in current dir.
 
 		File directoryPath = new File("D:\\Code\\GradSchool\\");
 
@@ -31,6 +44,9 @@ public class RMullinsLab4 {
 		});
 		
         try{
+
+            // Initializing arays and sorts to call in for loops later
+
             Lab4.heapSort testing = new Lab4.heapSort();
             Lab4.quickSort testQuick = new Lab4.quickSort();
             Lab4.insertionSort testInset = new Lab4.insertionSort();
@@ -41,7 +57,8 @@ public class RMullinsLab4 {
             ArrayList<Integer> medianSortData = new ArrayList<Integer>();
             ArrayList<Integer> heapSortData = new ArrayList<Integer>();
 
-
+            // Here we iterate through the text files and begin to read them into
+            // an int[]. This is the main driver of sorting the data.
 
             for (File file : files) {
                 long time1 = 0,time2= 0,time3= 0,time4= 0,time5= 0;
@@ -50,7 +67,8 @@ public class RMullinsLab4 {
                 String fileName = file.getName();
 
                 System.out.println("Standard Quick Sort\n");
-
+                // Runs the standard quick sort 100 times and times them. Later gets
+                // the avg to store into the time arrays above.
                 for(int i = 0; i < 100; i++){
                     long start = timing.tic();
                     
@@ -72,6 +90,8 @@ public class RMullinsLab4 {
                 System.out.println("-------------------");
 
                 System.out.println("Median of Three Quick Sort\n");
+                // Runs the median quick sort 100 times and times them. Later gets
+                // the avg to store into the time arrays above.
                 count = 0;
                 for(int i = 0; i < 100; i++){
                     long start = timing.tic();
@@ -94,6 +114,9 @@ public class RMullinsLab4 {
                 System.out.println("-------------------");
 
                 System.out.println("Insertion at 100 Quick Sort\n");
+                // Runs the quick sort with using insertion at partition =100 
+                // 100 times and times them. Later gets
+                // the avg to store into the time arrays above.
                 count = 0;
                 for(int i = 0; i < 100; i++){
                     long start = timing.tic();
@@ -116,6 +139,9 @@ public class RMullinsLab4 {
                 System.out.println("-------------------");
 
                 System.out.println("Insertion at 50 Quick Sort\n");
+                // Runs the quick sort with using insertion at partition = 50 
+                // 100 times and times them. Later gets
+                // the avg to store into the time arrays above.
                 count = 0;
                 for(int i = 0; i < 100; i++){
                     long start = timing.tic();
@@ -138,6 +164,8 @@ public class RMullinsLab4 {
                 System.out.println("-------------------");
 
                 System.out.println("Heap Sort\n");
+                // Runs the heap sort 100 times and times them. Later gets
+                // the avg to store into the time arrays above.
                 count = 0;
                 for(int i = 0; i < 100; i++){
                     long start = timing.tic();
@@ -161,6 +189,9 @@ public class RMullinsLab4 {
 
                 
             }
+
+            // Bellow we write the data/times to an output file Data.txt. 
+
             Lab4.fileTasks fileWritting = new Lab4.fileTasks();
             fileWritting.createFile("Data.txt");
             fileWritting.writeFile("Data.txt", "Standard Quick Sort: ");
@@ -194,6 +225,7 @@ public class RMullinsLab4 {
             }
         }
         catch(Exception e){
+            // prints stack trace for file read error
             e.printStackTrace();
         }
     }

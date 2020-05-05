@@ -9,6 +9,9 @@ It also contains the method to write to an output file */
 import java.io.*;
 
 public class fileTasks{
+  // This method creates a file if the file does not exist. If it
+  // exisits it will not create it.
+
     public void createFile(String s){
         try {
             File myObj = new File(s);
@@ -23,8 +26,8 @@ public class fileTasks{
           }
     }
 
-    /*This method is used to write the contents to a file. It will time how long it takes and
-    return that time to use at a later time*/ 
+    /*This method is used to write the contents to a file. Catches errors
+    as needed.*/ 
     public void writeFile(String fileName, String intTowrite){
 
         try {
